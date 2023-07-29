@@ -63,10 +63,6 @@ local SaveManager = {} do
 	end
 
 	function SaveManager:Save(name)
-		if (not name) then
-			return false, 'no config file is selected'
-		end
-
 		local fullPath = self.Folder .. '/settings/' .. name .. '.json'
 
 		local data = {
@@ -96,10 +92,6 @@ local SaveManager = {} do
 	end
 
 	function SaveManager:Load(name)
-		if (not name) then
-			return false, 'no config file is selected'
-		end
-		
 		local file = self.Folder .. '/settings/' .. name .. '.json'
 		if not isfile(file) then return false, 'invalid file' end
 
